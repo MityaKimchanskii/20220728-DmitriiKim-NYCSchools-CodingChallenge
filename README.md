@@ -9,6 +9,7 @@ The following features are implemented:
 * [+] REST API
 * [+] JSON
 * [+] MVC
+* [+] MapKit
 
 ## Video Walkthrough
 

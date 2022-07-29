@@ -12,7 +12,7 @@ class DetailsViewController: UIViewController {
     // MARK: - Properties
     var school: School?
     var dbnSchool: String?
-
+    
     // MARK: - Outlets
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var mathSATLabel: UILabel!
@@ -57,6 +57,14 @@ class DetailsViewController: UIViewController {
             mathSATLabel.text = "SAT Math: No SAT Information"
             readingSATLabel.text = "SAT Reading: No SAT Information"
             writingSATLabel.text = "SAT Writing: No SAT Information"
+        }
+    }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "mapSegue",
+            let destinationVC = segue.destination as? LocationViewController {
+             destinationVC.school = school
         }
     }
 }

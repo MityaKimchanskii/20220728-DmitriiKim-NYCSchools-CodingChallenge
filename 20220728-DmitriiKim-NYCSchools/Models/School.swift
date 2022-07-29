@@ -10,20 +10,24 @@ import Foundation
 struct School: Decodable {
     let dbn: String
     let name: String
-    let location: String
+    let address: String
     let phone: String
     let email: String?
     let website: String
     let description: String
+    let latitude: String?
+    let longitude: String?
     
     enum CodingKeys: String, CodingKey {
         case dbn = "dbn"
         case name = "school_name"
-        case location = "location"
+        case address = "primary_address_line_1"
         case phone = "phone_number"
         case email = "school_email"
         case website = "website"
         case description = "overview_paragraph"
+        case latitude = "latitude"
+        case longitude = "longitude"
     }
 }
 

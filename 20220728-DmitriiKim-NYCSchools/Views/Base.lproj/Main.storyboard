@@ -91,7 +91,7 @@
             </objects>
             <point key="canvasLocation" x="802.89855072463774" y="128.57142857142856"/>
         </scene>
-        <!--Details View Controller-->
+        <!--Details-->
         <scene sceneID="FLK-3c-BBG">
             <objects>
                 <viewController id="kPx-MM-gqA" customClass="DetailsViewController" customModule="_0220728_DmitriiKim_NYCSchools" customModuleProvider="target" sceneMemberID="viewController">
@@ -134,17 +134,27 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f9e-L6-Ydv">
+                                <rect key="frame" x="161.5" y="352" width="91.5" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Show Map"/>
+                                <connections>
+                                    <segue destination="ULk-OE-Y4E" kind="show" identifier="mapSegue" id="BiM-ce-K4l"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="J1t-yc-z8w"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="f9e-L6-Ydv" firstAttribute="top" secondItem="lKA-3p-yit" secondAttribute="bottom" constant="20" id="OW5-Jb-zPV"/>
                             <constraint firstItem="lKA-3p-yit" firstAttribute="centerX" secondItem="Pkf-KW-cRq" secondAttribute="centerX" id="WLQ-nb-nyq"/>
                             <constraint firstItem="lKA-3p-yit" firstAttribute="leading" secondItem="J1t-yc-z8w" secondAttribute="leading" constant="20" id="iij-T5-FCb"/>
+                            <constraint firstItem="f9e-L6-Ydv" firstAttribute="centerX" secondItem="Pkf-KW-cRq" secondAttribute="centerX" id="kZg-NQ-crK"/>
                             <constraint firstItem="J1t-yc-z8w" firstAttribute="trailing" secondItem="lKA-3p-yit" secondAttribute="trailing" constant="20" id="l8f-Pv-bZL"/>
                             <constraint firstItem="lKA-3p-yit" firstAttribute="top" secondItem="J1t-yc-z8w" secondAttribute="top" constant="30" id="tgU-63-wYV"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="1zj-I6-nqq"/>
+                    <navigationItem key="navigationItem" title="Details" id="1zj-I6-nqq"/>
                     <connections>
                         <outlet property="mathSATLabel" destination="tga-Pa-5GS" id="7gg-RZ-ssU"/>
                         <outlet property="nameLabel" destination="Pgu-5o-89k" id="bYs-6E-oOn"/>
@@ -156,6 +166,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5x7-c4-pBn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1568" y="129"/>
+        </scene>
+        <!--Location-->
+        <scene sceneID="u9d-Ht-zWT">
+            <objects>
+                <viewController id="ULk-OE-Y4E" customClass="LocationViewController" customModule="_0220728_DmitriiKim_NYCSchools" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GW1-aZ-lEM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="4Ii-TN-43P">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="CVK-yt-03V"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CVK-yt-03V" firstAttribute="trailing" secondItem="4Ii-TN-43P" secondAttribute="trailing" id="BfL-gS-WCa"/>
+                            <constraint firstItem="4Ii-TN-43P" firstAttribute="top" secondItem="CVK-yt-03V" secondAttribute="top" id="Kms-EC-gLB"/>
+                            <constraint firstItem="CVK-yt-03V" firstAttribute="bottom" secondItem="4Ii-TN-43P" secondAttribute="bottom" id="ajc-F9-49v"/>
+                            <constraint firstItem="4Ii-TN-43P" firstAttribute="leading" secondItem="CVK-yt-03V" secondAttribute="leading" id="puf-Jq-n7f"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Location" id="z7V-yx-XG1"/>
+                    <connections>
+                        <outlet property="mapView" destination="4Ii-TN-43P" id="Uw5-tb-rQV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k3M-MS-HCK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2312" y="129"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ANe-Hb-c2b">

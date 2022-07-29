@@ -27,11 +27,10 @@ class SchoolTableViewCell: UITableViewCell {
     func updateView() {
         guard let school = school else { return }
         nameLabel.text = school.name
-        locationLabel.text = "Location: \(school.location)"
+        locationLabel.text = "Adress: \(school.address)"
         phoneLabel.text = "Phone: \(school.phone)"
         guard let email = school.email else { return }
         emailLabel.text = "Email: \(email)"
         websiteLabel.text = "Website: \(school.website)"
     }
-
 }
