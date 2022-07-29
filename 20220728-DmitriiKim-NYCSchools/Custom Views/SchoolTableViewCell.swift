@@ -24,7 +24,7 @@ class SchoolTableViewCell: UITableViewCell {
     @IBOutlet weak var websiteLabel: UILabel!
     
     // MARK: - Helper Methods
-    func updateView() {
+    private func updateView() {
         guard let school = school else { return }
         nameLabel.text = school.name
         locationLabel.text = "Adress: \(school.address)"

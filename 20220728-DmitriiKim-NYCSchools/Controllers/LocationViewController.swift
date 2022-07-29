@@ -13,8 +13,8 @@ class LocationViewController: UIViewController {
     
     // MARK: - Properties
     var school: School?
-    var latitude: Double?
-    var longitude: Double?
+    private var latitude: Double?
+    private var longitude: Double?
     
     // MARK: - Outlets
     @IBOutlet weak var mapView: MKMapView!
@@ -27,7 +27,7 @@ class LocationViewController: UIViewController {
     }
     
     // MARK: - Helper Methods
-    func getCoordinate() {
+    private func getCoordinate() {
         guard let school = school,
         let latitudeString = school.latitude,
         let longitudeString = school.longitude
@@ -38,7 +38,7 @@ class LocationViewController: UIViewController {
         
     }
     
-    func showLocation() {
+    private func showLocation() {
         guard let school = school, let latitude = latitude, let longitude = longitude else { return }
         let location = CLLocation(latitude: latitude, longitude: longitude)
         let annotation = Annotation(title: school.name, locationName: school.address, coordinate: CLLocationCoordinate2D(latitude: latitude, longitude: longitude))

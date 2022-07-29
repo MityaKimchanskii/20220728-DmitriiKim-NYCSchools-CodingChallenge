@@ -10,7 +10,7 @@ import UIKit
 class SchoolListTableViewController: UITableViewController {
     
     // MARK: - Properties
-    var schools: [School] = []
+    private var schools: [School] = []
 
     // MARK: - Outlets
     @IBOutlet var schoolListTableView: UITableView!
@@ -45,7 +45,7 @@ class SchoolListTableViewController: UITableViewController {
     }
     
     // MARK: - Helper Methods
-    func fetchAllSchools() {
+    private func fetchAllSchools() {
         WebServiceManager.fetchAllSchools { [weak self] result in
             DispatchQueue.main.async {
                 switch result {

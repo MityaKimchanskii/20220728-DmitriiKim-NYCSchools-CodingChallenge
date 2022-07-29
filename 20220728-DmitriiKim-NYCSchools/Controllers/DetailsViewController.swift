@@ -28,7 +28,7 @@ class DetailsViewController: UIViewController {
     }
     
     // MARK: - Helper Methods
-    func fetchDetails() {
+    private func fetchDetails() {
         guard let dbnSchool = dbnSchool else { return }
         guard let description = school?.description else { return }
         WebServiceManager.fetchSchoolDetails(dbn: dbnSchool) { [weak self] result in
@@ -49,7 +49,7 @@ class DetailsViewController: UIViewController {
         }
     }
     
-    func updateView() {
+    private func updateView() {
         guard let description = school?.description else { return }
         if nameLabel.text == "(Name)" {
             overviewLabel.text = description
